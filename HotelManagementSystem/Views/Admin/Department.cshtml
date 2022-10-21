@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Department>
+@{
+    ViewBag.Title = "Department";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+}
+<h3>DEPARTMANLAR</h3>
+<p>
+    @Html.ActionLink("Create New", "DepartmentCreate", new { area = "" }, new { @class = "btn btn-success" })
+</p>
+<div class="row">
+    <div class="col-">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">OTELLER</h4>
+                <div id="key-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="dataTables_length" id="key-table_length">
+                            </div><div class="col-sm-12 ">
+                                <div id="key-table_filter" class="dataTables_filter">
+                                    <label>
+                                        Search:<input type="search" class="form-control form-control-sm" style="float:right" placeholder="" aria-controls="key-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="key-table" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" aria-describedby="key-table_info" style="position: relative;">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">NO</th>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">DEPARTMENT</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            i++;
+                                            <tr class="odd">
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    <div style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
+                                                        <input type="text" tabindex="0">
+                                                    </div>
+                                                    @i
+                                                </td>
+                                                <td>@item.Name</td>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    <td>
+                                                        <a href="~/Admin/DepartmentEdit/@item.Id" class="btn btn-success btn-sm">Edit</a>
+                                                        <a href="~/Admin/DepartmentDelete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

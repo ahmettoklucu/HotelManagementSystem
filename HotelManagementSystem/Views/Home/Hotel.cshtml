@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Hotel>
+@{
+    ViewBag.Title = "Hotel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="height: auto; background-image: url('Content/DORUKÇANTA.png');background-repeat:no-repeat;background-position:center;">
+    <div class="col-12">
+        <h2>Ürünler</h2>
+        <hr />
+    </div>
+    <div class="col-12">
+        <div class="row">
+            @foreach (var hotel in Model)
+            {
+                string hotelImage = String.IsNullOrEmpty(hotel.Image) ? "image1.jpg" : hotel.Image;
+                <div class="col-4 pl-3 pr-3">
+                    <div class="row">
+                        <img src="~/Content/images/Hotel/@hotelImage" width="50px" />
+                        <h5>@hotel.Name</h5>
+                        <div class="col-12">
+                            <a class="btn btn-primary" href="~/Home/HotelDetail/@hotel.Id">DETAY</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

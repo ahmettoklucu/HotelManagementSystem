@@ -1,0 +1,75 @@
+﻿@model HotelManagementSystem.Models.PagesModel.ReservationRoomHotel
+@{
+    ViewBag.Title = "Reservartion";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";int i = 0;
+}
+<h3>ÇALİŞANLAR</h3>
+<p>
+    @Html.ActionLink("Create New", "ReservationCreate","HotelAdmin", new { area = "" }, new { @class = "btn btn-success" })
+</p>
+<div class="row">
+    <div class="col-">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">Reservasyonlar</h4>
+                <div id="key-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12 m-10">
+                            <div class="dataTables_length" id="key-table_length">
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="key-table_filter" class="dataTables_filter">
+                                    <label class="m-15">
+                                        Search:<input type="search" class="form-control form-control-sm float-right" placeholder="" aria-controls="key-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="key-table" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" aria-describedby="key-table_info" style="position: relative;">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 20.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">NO</th>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 104.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending"> İSMİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 105.4px;" aria-label="Position: activate to sort column ascending">SOYİSİM</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 113.4px;" aria-label="Office: activate to sort column ascending">GİRİŞ TARİHİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 151.4px;" aria-label="Age: activate to sort column ascending">ÇİKİŞ TARİHİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 114.4px; " aria-label="Start date: activate to sort column ascending">Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.ReservationList)
+                                        {
+                                            i++;
+                                            <tr class="odd">
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    <div style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
+                                                        <input type="text" tabindex="0">
+                                                    </div>
+                                                    @i
+                                                </td>
+                                                <td>@Model.UserList.SingleOrDefault(x=>x.Id==item.UserId).UserName</td>
+                                                <td>@Model.RoomList.SingleOrDefault(x => x.Id == item.RoomId).RoomName</td>
+                                                <td>@item.StartDate.ToString()</td>
+                                                <td>@item.EndDate.ToString()</td>
+                                                <td>@item.StartDate.ToString()</td>>
+                                                <td>
+                                                    <a href="~/HotelAdmin/ReservationEdit/@item.Id" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="~/HotelAdmin/ReservationDelete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

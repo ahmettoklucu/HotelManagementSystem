@@ -1,0 +1,53 @@
+﻿@model HotelManagementSystem.Models.PagesModel.UserRoleModel
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="form-horizontal">
+    <div class="card-body p-4">
+
+        <div class="text-center mb-4">
+            <h4 class="text-uppercase mt-0">Register</h4>
+        </div>
+        <form method="post">
+            <div class="mb-3">
+                <label for="fullname" class="form-label">User Name</label>
+                <input class="form-control" type="text" id="UserName" name="UserName" maxlength="25" placeholder="Enter user name" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name" maxlength="25" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="surename" class="form-label">Sureame</label>
+                <input class="form-control" type="text" id="surename" name="surename" maxlength="25" placeholder="Enter your surename" required>
+            </div>
+            <div class="mb-3">
+                <label for="surename" class="form-label">city</label>
+                <input class="form-control" type="text" id="city" name="city" maxlength="40" placeholder="Enter your city" required>
+            </div>
+            <div class="mb-3">
+                <label for="phonenumber" class="form-label">Phone Number</label>
+                <input class="form-control" type="text" id="phonenumber" name="phonenumber" maxlength="11" placeholder="Enter your Phone Number" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="emailaddress" class="form-label">Email address</label>
+                <input class="form-control" type="email" id="Email" name="Email" maxlength="60" required placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" type="password" required id="Password" name="Password" maxlength="25" placeholder="Enter your password">
+            </div>
+            <input type="hidden" name="id" name="id" value="@Model.SingleUser.Id" />
+
+            <div class="mb-3 text-center d-grid">
+                <button class="btn btn-primary" type="submit"> Sign Up </button>
+            </div>
+            <p class="text-warning">@ViewBag.Mesaj</p>
+        </form>
+    </div> <!-- end card-body -->
+</div>
+
+

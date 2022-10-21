@@ -1,0 +1,32 @@
+﻿@model HotelManagementSystem.Models.RoomType
+
+@{
+    ViewBag.Title = "RoomTypeEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("RoomTypeEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="card-body p-4">
+            <div class="text-center mb-4">
+                <h4 class="text-uppercase mt-0">Oda Tipi oluştur</h4>
+            </div>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Oda Tipi İsmi</label>
+                    <input class="form-control" type="text" id="name" name="name" maxlength="25" placeholder="Enter RoomType name" required>
+                </div>
+                <input type="hidden" name="id" name="id" value="@Model.Id" />
+                <label>@ViewBag.massage</label>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,30 @@
+﻿@model HotelManagementSystem.Models.Department
+@{
+    ViewBag.Title = "DepartmentEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("DepartmentEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-horizontal">
+        <div class="card-body p-4">
+
+            <div class="text-center mb-4">
+                <h4 class="text-uppercase mt-0">DEPARTMAN DÜZENLE</h4>
+            </div>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">departman İsmi</label>
+                    <input class="form-control" type="text" id="name" name="name" maxlength="40" value="@Model.Name" placeholder="Enter Department name" required>
+                </div>
+                <input type="hidden" name="Id" name="Id" value="@Model.Id" />
+                <label>@ViewBag.massage</label>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+

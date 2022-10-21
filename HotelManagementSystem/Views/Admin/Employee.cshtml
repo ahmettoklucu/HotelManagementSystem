@@ -1,0 +1,81 @@
+﻿@model HotelManagementSystem.Models.PagesModel.EmployeeHotelDepartment
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+}
+<p>
+    @Html.ActionLink("Create New", "EmployeeCreate", new { area = "" }, new { @class = "btn btn-success" })
+</p>
+<div class="row">
+    <div class="col-">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">ÇALİŞANLAR</h4>
+                <div id="key-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12 m-10">
+                            <div class="dataTables_length" id="key-table_length">
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="key-table_filter" class="dataTables_filter">
+                                    <label class="m-15">
+                                        Search:<input type="search" class="form-control form-control-sm float-right" placeholder="" aria-controls="key-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="key-table" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" aria-describedby="key-table_info" style="position: relative;">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 20.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">NO</th>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 104.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending"> İSMİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 105.4px;" aria-label="Position: activate to sort column ascending">SOYİSİM</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 113.4px;" aria-label="Office: activate to sort column ascending">DEPARTMAN İSMİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 151.4px;" aria-label="Age: activate to sort column ascending">BAŞLAMA TARİHİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 104.4px; " aria-label="Start date: activate to sort column ascending">OTEL İSMİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 104.4px; " aria-label="Start date: activate to sort column ascending">OTEL ŞEHİRİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 164.4px; " aria-label="Start date: activate to sort column ascending">OTEL WEP SİTESİ</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 114.4px; " aria-label="Start date: activate to sort column ascending">Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.EmployeeList)
+                                        {
+                                            i++;
+                                            <tr class="odd">
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    <div style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
+                                                        <input type="text" tabindex="0">
+                                                    </div>
+                                                    @i
+                                                </td>
+                                                <td>@item.Name</td>
+                                                <td>@item.Surename</td>
+                                                <td>@Model.DepartmentList.SingleOrDefault(x=>x.Id==item.DepartmentId).Id</td>
+                                                <td>@item.StartDate.ToString()</td>
+                                                <td>@item.Hotel.Name</td>
+                                                <td>@item.Hotel.CityName</td>
+                                                <td>@item.Hotel.WepSite</td>
+                                                <td>
+                                                    <a href="~/Admin/EmployeeEdit/@item.Id" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="~/Admin/EmployeeDelete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  

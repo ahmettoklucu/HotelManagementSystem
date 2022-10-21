@@ -1,0 +1,70 @@
+﻿@model HotelManagementSystem.Models.PagesModel.RoomHotelRoomType
+@{
+    ViewBag.Title = "Room";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+}
+
+<p>
+    @Html.ActionLink("Create New", "RoomCreate", new { area = "" }, new { @class = "btn btn-success" })
+</p>
+<div class="row">
+    <div class="col-">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">ODALAR</h4>
+                <div id="key-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12 mr-10">
+                            <div class="dataTables_length" id="key-table_length">
+                            </div><div class="col-sm-12">
+                                <div id="key-table_filter" class="dataTables_filter">
+                                    <label>
+                                        Search:<input type="search" class="form-control form-control-sm" style="float:left" placeholder="" aria-controls="key-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="key-table" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" aria-describedby="key-table_info" style="position: relative;">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">NO</th>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ODA NUMARASİ</th>                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 113.4px;" aria-label="Office: activate to sort column ascending">ODA TİPİ </th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 51.4px;" aria-label="Age: activate to sort column ascending">FİYAT</th>
+                                            <th class="sorting" tabindex="0" aria-controls="key-table" style="width: 164.4px; " aria-label="Start date: activate to sort column ascending">Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.RoomList)
+                                        {
+                                            i++;
+                                            <tr class="odd">
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    <div style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
+                                                        <input type="text" tabindex="0">
+                                                    </div>
+                                                    @i
+                                                </td>
+                                                <td>@item.RoomName</td>
+                                                <td>@Model.RoomTypeList.SingleOrDefault(x=>x.Id==item.RoomTypeId).Name</td>
+                                                <td>@item.PeerDeim.ToString()</td>
+                                                <td>
+                                                    <a href="~/HotelAdmin/RoomEdit/@item.Id" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="~/HotelAdmin/RoomDelete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

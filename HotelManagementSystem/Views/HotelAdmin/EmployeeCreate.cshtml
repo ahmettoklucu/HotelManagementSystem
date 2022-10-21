@@ -1,0 +1,53 @@
+﻿@model HotelManagementSystem.Models.PagesModel.EmployeeHotelDepartment
+@{
+    ViewBag.Title = "EmployeeCreate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EmployeeCreate", "HotelAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>ÇALİŞAN EKLE</h4>
+        <hr />
+        <div class="form-group">
+            <span>İsmi</span>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="Name" id="Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Soyİsim</span>
+            <div class="col-md-10">
+                <input class="form-control" id="surename" name="surename">
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Maaş</span>
+            <div class="col-md-10">
+                <input type="number" step="0.1" class="form-control" id="wage" name="Wage">
+
+
+            </div>
+        </div>
+        <div class="col-md-10" data-select2-id="73">
+            <span>Departman</span>
+            <select id="DepartmentId" name="DepartmentId" class="form-control select2-hidden-accessible" data-toggle="select2" data-width="100%" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                <option data-select2-id="3">Select</option>
+                @foreach (var item in Model.DepartmentList)
+                {
+                   
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <label class="text-warning">@ViewBag.mesaj</label>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+

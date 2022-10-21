@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.RoomType>
+@{
+    ViewBag.Title = "RoomType";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+}
+<div class="row">
+    <div class="col-">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-0 header-title">ODA TİPLERİ</h4>
+                <p>
+                    @Html.ActionLink("Create New", "RoomTypeCreate", new { area = "" }, new { @class = "btn btn-success" })
+                </p>
+                <div id="key-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_length" id="key-table_length">
+                            </div><div class="col-sm-12 col-md-6">
+                                <div id="key-table_filter" class="dataTables_filter">
+                                    <label>
+                                        Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="key-table">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="key-table" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" aria-describedby="key-table_info" style="position: relative; width: 1015px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">NO</th>
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="key-table" style="width: 154.4px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ODA TİPİ</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            i++;
+                                            <tr class="odd">
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    <div style="position: absolute; height: 1px; width: 0px; overflow: hidden;">
+                                                        <input type="text" tabindex="0">
+                                                    </div>
+                                                    @i
+                                                </td>
+                                                <td>@item.Name</td>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    <td>
+                                                        <a href="~/Admin/RoomTypeEdit/@item.Id" class="btn btn-success btn-sm">Edit</a>
+                                                        <a href="~/Admin/RoomTypeDelete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

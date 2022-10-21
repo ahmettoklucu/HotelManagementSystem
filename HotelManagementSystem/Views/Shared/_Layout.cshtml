@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/style.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Home/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Fontawesome.css" type="text/css" />
+    <link rel="shortcut icon" href="~/Content/Admin/assets/images/favicon.ico">
+    <!-- App css -->
+    <link href="~/Content/Admin/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <!-- icons -->
+    <link href="~/Content/Admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="~/Content/Admin/assets/images/favicon.ico">
+    <!-- App css -->
+    <link href="~/Content/Admin/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <!-- icons -->
+    <link href="~/Content/Admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&amp;display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+
+        .revo-slider-emphasis-text {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            font-family: 'Poppins', sans-serif;
+            padding: 15px 20px;
+            border-top: 2px solid #FFF;
+            border-bottom: 2px solid #FFF;
+        }
+
+        .revo-slider-desc-text {
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+            width: 650px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .revo-slider-caps-text {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tp-video-play-button {
+            display: none !important;
+        }
+
+        .tp-caption {
+            white-space: nowrap;
+        }
+    </style>
+    <style>
+        body {
+            background-image: url("FVp3HQOVsAAyqxD.jpg");
+            background-color: #cccccc;
+        }
+    </style>
+    <title>Menu - Style 2 | Canvas</title>
+</head>
+<body class="stretched">
+
+    <div id="wrapper" class="clearfix">
+
+        <header id="header">
+            <div id="header-wrap">
+                <div class="container ">
+                    <div class="header-row ">
+                        <div id="logo" class="me-lg-5 dark">
+                            <a href="~/Home/index" class="standard-logo" logo="~/Content/DORUKÇANTA.png"><img src="~/Content/DORUKÇANTA.png" alt="Canvas Logo"></a>
+                            <a href="~/Home/index" class="retina-logo" logo="~/Content/DORUKÇANTA.png"><img src="~/Content/DORUKÇANTA.png" alt="Canvas Logo"></a>
+                        </div>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <div class="header-misc">
+                                <a class="fa fa-sign-in menu-item" aria-hidden="true" href="~/Admin/Login">Giriş Yap</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- item-->
+                            <a href="~/Admin/Logout" class="header-misc menu-item">
+                                <i class="fa fa-log-out"></i>
+                                <span>Logout</span>
+                            </a>
+                        }
+                        <div id="primary-menu-trigger">
+                            <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+                        </div>
+                        <nav class="primary-menu me-lg-auto">
+                            <ul class="menu-container">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="~/Home/index"><div>ANASAYFA</div></a>
+                                </li>
+                            </ul>
+                            <ul class="menu-container">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="~/Home/About"><div>HAKKIMIZDA</div></a>
+                                </li>
+                            </ul>
+                            <ul class="menu-container">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="~/Home/About"><div>TARİHÇE</div></a>
+                                </li>
+                            </ul>
+                            <ul class="menu-container">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="~/Home/Hotel"><div>ÜRÜNLERİMİZ</div></a>
+                                </li>
+                            </ul>
+                            <ul class="menu-container">
+                                <li class="menu-item">
+                                    <a class="menu-link" href="~/Home/Contact"><div>ULAŞİM</div></a>
+                                </li>
+                            </ul>
+                            @if (User.IsInRole("User"))
+                            {
+                                <ul class="menu-container">
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="~/Home/Reservation"><div>REZERVASYON</div></a>
+                                    </li>
+                                </ul>
+                            }
+                            @if (User.IsInRole("Admin")|| User.IsInRole("HotelAdmin"))
+                            {
+                                <ul class="menu-container">
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="~/Admin/index"><div>Admin</div></a>
+                                    </li>
+                                </ul>
+                            }
+                        </nav>
+                        <form class="top-search-form" action="https://themes.semicolonweb.com/html/canvas/search.html" method="get">
+                            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-wrap-clone"></div>
+        </header>
+
+
+        <center>
+            <section id="content" style="height:auto;width:auto; background-image: url('/Content/DORUKÇANTA.png'); background-repeat: no-repeat; background-position: center;">
+                @RenderBody()
+            </section>
+        </center>
+        <footer id="footer" data-scrollto-settings="{&quot;offset&quot;:140,&quot;speed&quot;:1250,&quot;easing&quot;:&quot;easeOutQuad&quot;}">
+            <div class="container">
+
+                <div class="footer-widgets-wrap">
+                    <div class="row col-mb-50">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="widget clearfix">
+                                <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards with a Retina &amp; Responsive Approach. Browse the amazing Features this template offers.</p>
+                                <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+                                    <address>
+                                        <strong>Headquarters:</strong><br>
+                                        795 Folsom Ave, Suite 600<br>
+                                        San Francisco, CA 94107<br>
+                                    </address>
+                                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
+                                    <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
+                                    <abbr title="Email Address"><strong>Email:</strong></abbr> <a href="https://themes.semicolonweb.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d14131b123d1e1c130b1c0e531e1210">[email&nbsp;protected]</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="widget clearfix">
+                                <h4>Client Testimonials</h4>
+                                <div class="fslider testimonial no-image bg-transparent border-0 shadow-none p-0" data-animation="slide" data-arrows="false">
+                                    <div class="flexslider">
+
+                                        <div class="flex-viewport" style="overflow: hidden; position: relative; height: 99.5938px;">
+                                            <div class="slider-wrap" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-1032px, 0px, 0px);">
+                                                <div class="slide clone" aria-hidden="true" style="width: 516px; margin-right: 0px; float: left; display: block;">
+                                                    <div class="testi-image">
+                                                        <a href="#"><img src="~/Content/Home/images/testimonials/1.jpg" alt="Customer Testimonails" draggable="false"></a>
+                                                    </div>
+                                                    <div class="testi-content">
+                                                        <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                                                        <div class="testi-meta">
+                                                            John Doe
+                                                            <span>XYZ Inc.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide" style="width: 516px; margin-right: 0px; float: left; display: block;" data-thumb-alt="">
+                                                    <div class="testi-image">
+                                                        <a href="#"><img src="~/Content/Home/images/testimonials/3.jpg" alt="Customer Testimonails" draggable="false"></a>
+                                                    </div>
+                                                    <div class="testi-content">
+                                                        <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                                                        <div class="testi-meta">
+                                                            Steve Jobs
+                                                            <span>Apple Inc.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide flex-active-slide" data-thumb-alt="" style="width: 516px; margin-right: 0px; float: left; display: block;">
+                                                    <div class="testi-image">
+                                                        <a href="#"><img src="~/Content/Home/images/testimonials/2.jpg" alt="Customer Testimonails" draggable="false"></a>
+                                                    </div>
+                                                    <div class="testi-content">
+                                                        <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+                                                        <div class="testi-meta">
+                                                            Collis Ta'eed
+                                                            <span>Envato Inc.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide" data-thumb-alt="" style="width: 516px; margin-right: 0px; float: left; display: block;">
+                                                    <div class="testi-image">
+                                                        <a href="#"><img src="~/Content/Home/images/testimonials/1.jpg" alt="Customer Testimonails" draggable="false"></a>
+                                                    </div>
+                                                    <div class="testi-content">
+                                                        <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                                                        <div class="testi-meta">
+                                                            John Doe
+                                                            <span>XYZ Inc.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide clone" style="width: 516px; margin-right: 0px; float: left; display: block;" aria-hidden="true">
+                                                    <div class="testi-image">
+                                                        <a href="#"><img src="~/Content/Home/images/testimonials/3.jpg" alt="Customer Testimonails" draggable="false"></a>
+                                                    </div>
+                                                    <div class="testi-content">
+                                                        <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                                                        <div class="testi-meta">
+                                                            Steve Jobs
+                                                            <span>Apple Inc.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><ol class="flex-control-nav flex-control-paging"><li><a href="#" class="">1</a></li><li><a href="#" class="flex-active">2</a></li><li><a href="#" class="">3</a></li></ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget clearfix">
+                                <a href="#" class="social-icon si-small si-rounded si-facebook">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-twitter">
+                                    <i class="icon-twitter"></i>
+                                    <i class="icon-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-gplus">
+                                    <i class="icon-gplus"></i>
+                                    <i class="icon-gplus"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-pinterest">
+                                    <i class="icon-pinterest"></i>
+                                    <i class="icon-pinterest"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-vimeo">
+                                    <i class="icon-vimeo"></i>
+                                    <i class="icon-vimeo"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-github">
+                                    <i class="icon-github"></i>
+                                    <i class="icon-github"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-yahoo">
+                                    <i class="icon-yahoo"></i>
+                                    <i class="icon-yahoo"></i>
+                                </a>
+                                <a href="#" class="social-icon si-small si-rounded si-linkedin">
+                                    <i class="icon-linkedin"></i>
+                                    <i class="icon-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="widget quick-contact-widget form-widget clearfix">
+                                <h4>Send Message</h4>
+                                <div class="form-result"></div>
+                                <form id="quick-contact-form" name="quick-contact-form" action="https://themes.semicolonweb.com/html/canvas/include/form.php" method="post" class="quick-contact-form mb-0" novalidate="novalidate">
+                                    <div class="form-process">
+                                        <div class="css3-spinner">
+                                            <div class="css3-spinner-scaler"></div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mx-auto">
+                                        <div class="input-group-text"><i class="icon-user"></i></div>
+                                        <input type="text" class="required form-control" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Full Name">
+                                    </div>
+                                    <div class="input-group mx-auto">
+                                        <div class="input-group-text"><i class="icon-email2"></i></div>
+                                        <input type="text" class="required form-control email" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="Email Address">
+                                    </div>
+<textarea class="required form-control input-block-level short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Message"></textarea>
+                                    <input type="text" class="d-none" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="">
+                                    <input type="hidden" name="prefix" value="quick-contact-form-">
+                                    <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn btn-danger m-0" value="submit">Send Email</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="copyrights">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-lg-auto text-center text-lg-start">
+                            <p class="mb-3">Copyrights © 2020 All Rights Reserved by Canvas Inc.</p>
+                        </div>
+                        <div class="col-12 col-lg-auto text-center text-lg-end">
+                            <div class="copyrights-menu copyright-links mb-0">
+                                <a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Content/Home/js/jquery.js"></script>
+    <script src="~/Content/Home/js/plugins.min.js"></script>
+    <script src="~/Content/FontAwesome.js"></script>
+    <script src="~/Content/Home/js/functions.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"73d1eb7c195c50c4","token":"0627f0b8b73941069bc19139e63db853","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
+    <script src="~/Content/Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/feather-icons/feather.min.js"></script>
+    <!-- App js -->
+    <script src="~/Content/Admin/assets/js/app.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/feather-icons/feather.min.js"></script>
+    <!-- App js -->
+    <script src="~/Content/Admin/assets/js/app.min.js"></script>
+    <!-- end page -->
+    <!-- Vendor -->
+    <script src="~/Content/Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Content/Admin/assets/libs/feather-icons/feather.min.js"></script>
+    <!-- App js -->
+    <script src="~/Content/Admin/assets/js/app.min.js"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Content/Home/js/jquery.js"></script>
+    <script src="~/Content/Home/js/plugins.min.js"></script>
+
+    <script src="~/Content/Home/js/functions.js"></script>
+
+    <script src="~/Content/Home/include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/Content/Home/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script>
+        var tpj = jQuery;
+        tpj.noConflict();
+        var $ = jQuery.noConflict();
+
+        tpj(document).ready(function () {
+            var apiRevoSlider = tpj('#rev_slider_779_1').show().revolution(
+                {
+                    sliderType: "standard",
+                    jsFileLocation: "include/rs-plugin/js/",
+                    dottedOverlay: "none",
+                    sliderLayout: "fullwidth",
+                    delay: 9000,
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1200, 1024, 778, 480],
+                    gridheight: [700, 768, 960, 720],
+                    hideThumbs: 200,
+
+                    thumbWidth: 100,
+                    thumbHeight: 50,
+                    thumbAmount: 3,
+
+                    touchenabled: "on",
+                    onHoverStop: "on",
+
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
+
+
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "hades",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div></div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        },
+                        thumbnails: {
+                            style: "hades",
+                            enable: true,
+                            width: 50,
+                            height: 50,
+                            min_width: 100,
+                            wrapper_padding: 5,
+                            wrapper_color: "transparent",
+                            wrapper_opacity: "1",
+                            tmp: '<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
+                            visibleAmount: 5,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            span: false,
+                            position: "inner",
+                            space: 5,
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 20
+                        }
+                    },
+
+                    soloArrowLeftHalign: "left",
+                    soloArrowLeftValign: "center",
+                    soloArrowLeftHOffset: 20,
+                    soloArrowLeftVOffset: 0,
+
+                    soloArrowRightHalign: "right",
+                    soloArrowRightValign: "center",
+                    soloArrowRightHOffset: 20,
+                    soloArrowRightVOffset: 0,
+
+                    shadow: 0,
+                    fullWidth: "off",
+                    fullScreen: "on",
+
+                    spinner: "spinner0",
+
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+
+                    shuffle: "off",
+
+
+                    forceFullWidth: "off",
+                    fullScreenAlignForce: "off",
+
+                    hideThumbsOnMobile: "off",
+                    hideNavDelayOnMobile: 1500,
+                    hideBulletsOnMobile: "off",
+                    hideArrowsOnMobile: "off",
+                    hideThumbsUnderResolution: 0,
+
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    startWithSlide: 0,
+                });
+
+            apiRevoSlider.on("revolution.slide.onloaded", function (e) {
+                setTimeout(function () { SEMICOLON.slider.sliderDimensions(); }, 200);
+            });
+
+            apiRevoSlider.on("revolution.slide.onchange", function (e, data) {
+                SEMICOLON.slider.revolutionSliderMenu();
+            });
+        }); //ready
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"73d1eb4bdc8250ee","token":"0627f0b8b73941069bc19139e63db853","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from themes.semicolonweb.com/html/canvas/menu-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Aug 2022 09:36:55 GMT -->
+</html>
